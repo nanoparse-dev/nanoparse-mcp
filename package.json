@@ -1,0 +1,39 @@
+{
+  "name": "nanoparse-mcp",
+  "version": "1.0.0",
+  "description": "MCP client for NanoParse — pay-per-parse web content extraction for AI agents",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "nanoparse-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "nanoparse",
+    "web-scraping",
+    "markdown",
+    "x402",
+    "ai-agent"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nanoparse/nanoparse-mcp"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "viem": "^2.55.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.5.0"
+  }
+}
