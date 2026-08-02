@@ -26,7 +26,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/nanoparse/nanoparse-mcp"
+    "url": "https://github.com/nanoparse-dev/nanoparse-mcp"
   },
   "license": "MIT",
   "dependencies": {
