@@ -1,6 +1,6 @@
 {
   "name": "nanoparse-mcp",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "MCP client for NanoParse — pay-per-parse web content extraction for AI agents",
   "type": "module",
   "main": "dist/index.js",
@@ -12,6 +12,7 @@
   ],
   "scripts": {
     "build": "tsc",
+    "postbuild": "node -e \"var f='dist/index.js';var c=require('fs').readFileSync(f,'utf8');require('fs').writeFileSync(f,'#!/usr/bin/env node\\n'+c);require('fs').chmodSync(f,'755')\"",
     "prepublishOnly": "npm run build"
   },
   "keywords": [

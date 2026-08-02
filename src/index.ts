@@ -9,7 +9,7 @@ import { fetchPage } from "./fetch.js";
 const server = new Server(
   {
     name: "nanoparse-mcp",
-    version: "1.0.0",
+    version: "1.0.2",
   },
   {
     capabilities: {
