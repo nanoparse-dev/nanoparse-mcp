@@ -30,7 +30,7 @@ npm install -g nanoparse-mcp
 ### Prerequisites
 
 - Node.js 18+
-- A Base wallet with USDC (after your first 50 free parses)
+- A Base wallet with USDC (after your first 10 free parses)
 - Set `NANOPARSE_WALLET_KEY` in your environment
 
 ## Getting a wallet
@@ -84,7 +84,7 @@ See [`examples/basic-usage.md`](./examples/basic-usage.md) for a full copy-paste
 
 ### Pricing
 
-First 50 calls per IP are free. After that, **$0.0175 per parse** via x402 micropayment in USDC on Base. See [nanoparse.app](https://nanoparse.app) for current pricing and API docs.
+First 10 parses per device are free. After that, **$0.0175 per parse** via x402 micropayment in USDC on Base. See [nanoparse.app](https://nanoparse.app) for current pricing and API docs.
 
 ## Security
 
