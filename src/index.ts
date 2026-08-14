@@ -24,7 +24,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
       name: "nanoparse_fetch",
       description:
         "Fetch a web page and return clean, structured Markdown with metadata. " +
-        "First 50 parses free per IP. After that, pay $0.0175 USDC on Base via x402. " +
+        "First 10 parses free per device. After that, pay $0.0175 USDC on Base via x402. " +
         "No account or API key required.",
       inputSchema: {
         type: "object",
