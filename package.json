@@ -1,6 +1,6 @@
 {
   "name": "nanoparse-mcp",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "MCP client for NanoParse — pay-per-parse web content extraction for AI agents",
   "type": "module",
   "main": "dist/index.js",
