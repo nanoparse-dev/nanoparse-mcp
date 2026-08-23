@@ -38,13 +38,11 @@ That's it. Your agent can now fetch pages from inside any MCP-compatible client 
 ## Payments
 
 - **First 10 parses per device are free.** No account, no API key, no human required.
-- **After that: $0.0175 per parse** (flat, no subscriptions) via **x402** — an open micropayment protocol. Your agent's wallet signs the payment automatically. To give your agent a Coinbase wallet, run `npx @coinbase/payments-mcp` and connect it alongside NanoParse.
-- **Prefer a card?** Buy a prepaid credit pack at [nanoparse.app/payments](https://nanoparse.app/payments) and send your bearer key with requests:
-  `Authorization: Bearer <your np_bal_ key>`
+- **After that: $0.01 per parse** (flat, no subscriptions) via **x402** — an open micropayment protocol. Your agent's wallet signs the payment automatically. To give your agent a Coinbase wallet, run `npx @coinbase/payments-mcp` and connect it alongside NanoParse.
 
 ## How payments work under the hood
 
-When an agent without free quota calls `nanoparse_fetch`, the endpoint responds with an **HTTP 402 — Payment Required** carrying x402 payment instructions. The agent's wallet signs a $0.0175 USDC (Base) transfer, the facilitator settles it, and the parse proceeds. The hosted endpoint handles the entire challenge → settlement flow — the agent never needs a private key on your machine.
+When an agent without free quota calls `nanoparse_fetch`, the endpoint responds with an **HTTP 402 — Payment Required** carrying x402 payment instructions. The agent's wallet signs a $0.01 USDC (Base) transfer, the facilitator settles it, and the parse proceeds. The hosted endpoint handles the entire challenge → settlement flow — the agent never needs a private key on your machine.
 
 ## Example
 
@@ -62,8 +60,8 @@ The `nanoparse-mcp` npm package previously published here was the first-generati
 
 ## Docs
 
-- Integration guide: [nanoparse.app/integration](https://nanoparse.app/integration)
-- Pricing: [nanoparse.app/payments](https://nanoparse.app/payments)
+- Quick start & integration: [nanoparse.app/quickstart](https://nanoparse.app/quickstart)
+- Compare & pricing: [nanoparse.app/compare](https://nanoparse.app/compare)
 - API + MCP endpoint: [nanoparse.app](https://nanoparse.app)
 
 MIT licensed.

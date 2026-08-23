@@ -9,7 +9,7 @@ import { fetchPage } from "./fetch.js";
 const server = new Server(
   {
     name: "nanoparse-mcp",
-    version: "1.0.2",
+    version: "1.0.9",
   },
   {
     capabilities: {
@@ -24,7 +24,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
       name: "nanoparse_fetch",
       description:
         "Fetch a web page and return clean, structured Markdown with metadata. " +
-        "First 10 parses free per device. After that, pay $0.0175 USDC on Base via x402. " +
+        "First 10 parses free per device. After that, pay $0.01 USDC on Base via x402. " +
         "No account or API key required.",
       inputSchema: {
         type: "object",
