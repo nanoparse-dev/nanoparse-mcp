@@ -1,8 +1,14 @@
 # NanoParse MCP
 
-**Give your AI agent clean, structured web content.** NanoParse MCP is a hosted Model Context Protocol server at `https://nanoparse.app/mcp` that turns any URL into clean Markdown your agent can actually use — with machine-readable trust signals attached.
+[![npm version](https://img.shields.io/npm/v/nanoparse-mcp)](https://www.npmjs.com/package/nanoparse-mcp)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Website](https://img.shields.io/badge/web-nanoparse.app-22D3EE)](https://nanoparse.app)
+
+**The easiest way for AI agents to read the web.** NanoParse MCP is a hosted Model Context Protocol server at `https://nanoparse.app/mcp` that turns any URL into clean Markdown your agent can actually use — with machine-readable trust signals attached.
 
 No install. No wallet key. No `.env`. Connect once and your agent can read the web.
+
+**Why agents choose NanoParse over Firecrawl or Jina Reader:** no account, no subscription, no API key. Pay $0.01 per parse via x402 when the free tier runs out. Full JavaScript/SPA rendering, native GFM tables, and Litmus trust signals — built for agents, not humans.
 
 ## Quick start
 

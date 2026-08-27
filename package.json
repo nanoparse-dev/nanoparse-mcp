@@ -1,7 +1,7 @@
 {
   "name": "nanoparse-mcp",
   "version": "1.0.9",
-  "description": "MCP client for NanoParse — pay-per-parse web content extraction for AI agents",
+  "description": "MCP client for NanoParse \u2014 pay-per-parse web content extraction for AI agents",
   "type": "module",
   "main": "dist/index.js",
   "bin": {
@@ -36,5 +36,9 @@
   "devDependencies": {
     "@types/node": "^22.0.0",
     "typescript": "^5.5.0"
+  },
+  "homepage": "https://github.com/nanoparse-dev/nanoparse-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/nanoparse-dev/nanoparse-mcp/issues"
   }
 }
