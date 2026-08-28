@@ -41,6 +41,28 @@ That's it. Your agent can now fetch pages from inside any MCP-compatible client 
 
 `nanoparse_status` tells your agent exactly where it stands: free parses remaining, wallet and USDC balance, and whether the next call will succeed without payment. Agents call it before spending.
 
+## Real output
+
+Every parse returns `markdown` + `metadata` + `litmus`. Example — parsing an arXiv paper (`examples/example-output.json`, complete and unmodified):
+
+```json
+{
+  "litmus": {
+    "source": { "type": "academic", "authority": 0.85, "rationale": "academic source" },
+    "freshness": { "published": null, "stale_warning": "No publish date found — verify independently" },
+    "tldr": "Abstract page for arXiv paper 2401.14295: Demystifying Chains, Trees, and Graphs of Thoughts",
+    "key_figures": [ { "value": "2,247", "context": "Thu, 25 Jan 2024 16:34:00 UTC (2,247 KB)" } ],
+    "content_type": "academic_paper",
+    "reading_time": { "minutes": 4 },
+    "hedge_language": { "density": "low", "markers_found": 0 },
+    "syndication": { "detected": false },
+    "paywall": { "detected": false }
+  }
+}
+```
+
+The agent learns *before reading a word*: this is an academic source (0.85 authority), no publish date was found (verify independently), here's the one-sentence summary, the key numbers, and there's no paywall or syndication flag. See [`examples/agent-conversation.md`](examples/agent-conversation.md) for a full worked round-trip.
+
 ## Payments
 
 - **First 10 parses per device are free.** No account, no API key, no human required.
@@ -50,19 +72,38 @@ That's it. Your agent can now fetch pages from inside any MCP-compatible client 
 
 When an agent without free quota calls `nanoparse_fetch`, the endpoint responds with an **HTTP 402 — Payment Required** carrying x402 payment instructions. The agent's wallet signs a $0.01 USDC (Base) transfer, the facilitator settles it, and the parse proceeds. The hosted endpoint handles the entire challenge → settlement flow — the agent never needs a private key on your machine.
 
+## Pricing vs Firecrawl
+
+| | NanoParse | Firecrawl Hobby |
+|---|---|---|
+| Billing | **$0.01 per parse, flat** | $16/mo subscription, credits expire monthly |
+| 5,000 parses | **$50.00** | $16 base — but ~$145 with JSON/extraction modes (9× credit burn) |
+| Account / API key | **None** | Required |
+| Agent can pay directly (x402) | **Yes** | No |
+
+Full math, including when Firecrawl's base rate wins at scale: [`examples/costs.md`](examples/costs.md).
+
 ## Example
 
 ```
-You: Fetch https://www.ft.com/content/... and summarize the argument.
+You: Fetch https://arxiv.org/abs/2401.14295 and summarize the argument.
 
 Agent: [calls nanoparse_fetch(url)]
-       → clean Markdown + Litmus signals
-       → summarizes from primary content, cites freshness and authority
+       → clean Markdown + Litmus (academic, authority 0.85, 4-min read,
+         no date found — verify, no paywall)
+       → summarizes from primary content, cites authority and freshness
 ```
 
 ## Repository note
 
-The `nanoparse-mcp` npm package previously published here was the first-generation local client, which held a wallet private key and signed x402 payments on your machine. It is retired: the hosted MCP endpoint now handles the full payment flow itself, so the local client is no longer needed. **Use the hosted endpoint above** — it is the current, supported integration.
+The `nanoparse-mcp` npm package and the local stdio client in `src/` were the
+first-generation integration, which held a wallet private key
+(`NANOPARSE_WALLET_KEY`) and signed x402 payments on your machine. Both are
+**retired**: the hosted endpoint above now handles the full payment flow
+itself, so no local client or wallet key is needed. The retired client code
+is preserved in [`archive/v1-local-client/`](archive/v1-local-client/) for
+history, and the npm package is deprecated. **Use the hosted endpoint** — it
+is the current, supported integration.
 
 ## Docs
 

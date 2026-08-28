@@ -1,0 +1,101 @@
+{
+  "url": "https://arxiv.org/abs/2401.14295",
+  "parsed_at": "2026-08-28T00:00:00Z",
+  "note": "Real response from POST https://nanoparse.app/fetch (admin round, same public response shape). Markdown truncated to the first 3,000 chars for readability; metadata and litmus are complete and unmodified.",
+  "markdown_truncated": true,
+  "markdown": "# [2401.14295] Demystifying Chains, Trees, and Graphs of Thoughts\n\n--\n\n  \n    \n      # Computer Science > Computation and Language\n    \n\n    \n      **arXiv:2401.14295 (cs)\n    \n\n- \n\n  \n    \n  [Submitted on 25 Jan 2024 ([v1](https://arxiv.org/abs/2401.14295v1)), last revised 1 Apr 2026 (this version, v6)]\n    # Title:Demystifying Chains, Trees, and Graphs of Thoughts\n    Authors:[Maciej Besta](https://arxiv.org/search/cs?searchtype=author&query=Besta,+M), [Florim Memedi](https://arxiv.org/search/cs?searchtype=author&query=Memedi,+F), [Zhenyu Zhang](https://arxiv.org/search/cs?searchtype=author&query=Zhang,+Z), [Robert Gerstenberger](https://arxiv.org/search/cs?searchtype=author&query=Gerstenberger,+R), [Guangyuan Piao](https://arxiv.org/search/cs?searchtype=author&query=Piao,+G), [Nils Blach](https://arxiv.org/search/cs?searchtype=author&query=Blach,+N), [Piotr Nyczyk](https://arxiv.org/search/cs?searchtype=author&query=Nyczyk,+P), [Marcin Copik](https://arxiv.org/search/cs?searchtype=author&query=Copik,+M), [Grzegorz Kwa\u015bniewski](https://arxiv.org/search/cs?searchtype=author&query=Kwa%C5%9Bniewski,+G), [J\u00fcrgen M\u00fcller](https://arxiv.org/search/cs?searchtype=author&query=M%C3%BCller,+J), [Lukas Gianinazzi](https://arxiv.org/search/cs?searchtype=author&query=Gianinazzi,+L), [Ales Kubicek](https://arxiv.org/search/cs?searchtype=author&query=Kubicek,+A), [Hubert Niewiadomski](https://arxiv.org/search/cs?searchtype=author&query=Niewiadomski,+H), [Aidan O'Mahony](https://arxiv.org/search/cs?searchtype=author&query=O'Mahony,+A), [Onur Mutlu](https://arxiv.org/search/cs?searchtype=author&query=Mutlu,+O), [Torsten Hoefler](https://arxiv.org/search/cs?searchtype=author&query=Hoefler,+T)            \n    [View PDF](/pdf/2401.14295)\n    [HTML (experimental)](https://arxiv.org/html/2401.14295v6)\n\n    **\n            Abstract:The field of natural language processing (NLP) has witnessed significant progress in recent years, with a notable focus on improving large language models' (LLM) performance through innovative prompting techniques. Among these, prompt engineering coupled with structures has emerged as a promising paradigm, with designs such as Chain-of-Thought, Tree of Thoughts, or Graph of Thoughts, in which the overall LLM reasoning is guided by a structure such as a graph. As illustrated with numerous examples, this paradigm significantly enhances the LLM's capability to solve numerous tasks, ranging from logical or mathematical reasoning to planning or creative writing. To facilitate the understanding of this growing field and pave the way for future developments, we devise a general blueprint for effective and efficient LLM reasoning schemes. For this, we conduct an in-depth analysis of the prompt execution pipeline, clarifying and clearly defining different concepts. We then build the first taxonomy of structure-enhanced LLM reasoning schemes. We focus on identifying fundamental classes of harnessed structures, and we analyze the representations of the",
+  "metadata": {
+    "title": "[2401.14295] Demystifying Chains, Trees, and Graphs of Thoughts",
+    "author": null,
+    "description": "Abstract page for arXiv paper 2401.14295: Demystifying Chains, Trees, and Graphs of Thoughts",
+    "published": null,
+    "image": "/static/browse/0.3.4/images/arxiv-logo-fb.png",
+    "site": "arXiv.org",
+    "domain": "arxiv.org",
+    "wordCount": 806
+  },
+  "litmus": {
+    "source": {
+      "type": "academic",
+      "authority": 0.85,
+      "rationale": "academic source"
+    },
+    "freshness": {
+      "published": null,
+      "age": "unknown",
+      "stale_warning": "No publish date found \u2014 verify independently",
+      "modified": null,
+      "has_correction": false,
+      "correction_note": null
+    },
+    "tldr": "Abstract page for arXiv paper 2401.14295: Demystifying Chains, Trees, and Graphs of Thoughts",
+    "key_figures": [
+      {
+        "value": "5%",
+        "context": "/search/cs?searchtype=author&query=Kwa%C5%9Bniewski,+G), [J\u00fcrgen M\u00fcller](https://arxiv.org/search/cs?s"
+      },
+      {
+        "value": "3%",
+        "context": "rg/search/cs?searchtype=author&query=M%C3%BCller,+J), [Lukas Gianinazzi](https://arxiv.org/search/cs?s"
+      },
+      {
+        "value": "2,247",
+        "context": "Thu, 25 Jan 2024 16:34:00 UTC (2,247 KB)** **[[v2]](/abs/2401.14295v2) Sat,"
+      },
+      {
+        "value": "2,290",
+        "context": "Sat, 30 Mar 2024 16:33:36 UTC (2,290 KB)** **[[v3]](/abs/2401.14295v3) Fri,"
+      },
+      {
+        "value": "2,297",
+        "context": ") Sat, 8 Feb 2025 09:02:41 UTC (2,297 KB)** **[[v5]](/abs/2401.14295v5) Fri,"
+      }
+    ],
+    "structural_trust_score": {
+      "level": "medium",
+      "trust_factors": [
+        "High-authority source",
+        "No publish date found \u2014 verify independently"
+      ]
+    },
+    "hedge_language": {
+      "density": "low",
+      "markers_found": 0,
+      "per_500_words": 0
+    },
+    "content_density": {
+      "thin_content": false,
+      "substantive_sentence_ratio": 0.7647058823529411
+    },
+    "syndication": {
+      "detected": false,
+      "note": null
+    },
+    "paywall": {
+      "detected": false,
+      "note": null
+    },
+    "content_type": "academic_paper",
+    "reading_time": {
+      "minutes": 4
+    },
+    "is_archived": {
+      "archive_org": true,
+      "archive_is": false
+    },
+    "outbound_authority": {
+      "score": 0.54,
+      "top_domains": [
+        "ui.adsabs.harvard.edu",
+        "scholar.google.com",
+        "api.semanticscholar.org",
+        "info.arxiv.org",
+        "core.ac.uk"
+      ]
+    },
+    "boilerplate_ratio": {
+      "ratio": 0.08,
+      "confidence": "high"
+    }
+  }
+}

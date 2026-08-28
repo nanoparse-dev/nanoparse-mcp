@@ -4,6 +4,22 @@ All notable changes to nanoparse-mcp will be documented in this file.
 
 ---
 
+## [2.0.0] - 2026-08-28
+
+### Changed
+
+- Repo restructured as the public home for the **hosted** MCP endpoint
+  (`https://nanoparse.app/mcp`): docs + real examples, no client code.
+- Retired v1 local stdio client moved to `archive/v1-local-client/`
+  (was `src/`), with a DEPRECATED banner. The client held a wallet private
+  key locally (`NANOPARSE_WALLET_KEY`) and is replaced by the hosted
+  endpoint's own payment flow.
+- npm package `nanoparse-mcp` deprecated — use the hosted endpoint.
+- README: real Litmus output example (arXiv parse), worked agent
+  conversation, cost comparison vs Firecrawl (verified Aug 2026), new
+  `examples/` directory (`example-output.json`, `agent-conversation.md`,
+  `costs.md`).
+
 ## [1.0.9] - 2026-08-23
 
 ### Changed
