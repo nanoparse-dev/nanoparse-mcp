@@ -65,7 +65,7 @@ The agent learns *before reading a word*: this is an academic source (0.85 autho
 
 ## Payments
 
-- **First 10 parses per device are free.** No account, no API key, no human required.
+- **First 10 parses per network (subnet) are free** — lifetime, shared across your whole network. No account, no API key, no human required.
 - **After that: $0.01 per parse** (flat, no subscriptions) via **x402** — an open micropayment protocol. Your agent's wallet signs the payment automatically. To give your agent a Coinbase wallet, run `npx @coinbase/payments-mcp` and connect it alongside NanoParse.
 
 ## How payments work under the hood
@@ -96,7 +96,7 @@ Agent: [calls nanoparse_fetch(url)]
 
 ## Repository note
 
-The `nanoparse-mcp` npm package and the local stdio client in `src/` were the
+The `nanoparse-mcp` npm package and the local stdio client were the
 first-generation integration, which held a wallet private key
 (`NANOPARSE_WALLET_KEY`) and signed x402 payments on your machine. Both are
 **retired**: the hosted endpoint above now handles the full payment flow

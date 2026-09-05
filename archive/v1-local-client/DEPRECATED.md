@@ -30,3 +30,7 @@ handling flow.
 
 Retired 2026-08-23 (1.0.7). See the repo root `README.md` for the current
 integration.
+
+Current pricing & free tier: [nanoparse.app/compare](https://nanoparse.app/compare).
+Pricing figures quoted in this archived client are historical — the hosted
+endpoint and the repo root README are the source of truth.
