@@ -8,7 +8,7 @@
 
 No install. No wallet key. No `.env`. Connect once and your agent can read the web.
 
-**Why agents choose NanoParse over Firecrawl or Jina Reader:** no account, no subscription, no API key. Pay $0.01 per parse via x402 when the free tier runs out. Full JavaScript/SPA rendering, native GFM tables, and Litmus trust signals — built for agents, not humans.
+**Why agents choose NanoParse over Firecrawl or Jina Reader:** no account, no subscription, no API key. Pay $0.005 per parse via x402 when the free tier runs out. Full JavaScript/SPA rendering, native GFM tables, and Litmus trust signals — built for agents, not humans.
 
 ## Quick start
 
@@ -66,17 +66,17 @@ The agent learns *before reading a word*: this is an academic source (0.85 autho
 ## Payments
 
 - **First 10 parses per network (subnet) are free** — lifetime, shared across your whole network. No account, no API key, no human required.
-- **After that: $0.01 per parse** (flat, no subscriptions) via **x402** — an open micropayment protocol. Your agent's wallet signs the payment automatically. To give your agent a Coinbase wallet, run `npx @coinbase/payments-mcp` and connect it alongside NanoParse.
+- **After that: $0.005 per parse** (flat, no subscriptions) via **x402** — an open micropayment protocol. Your agent's wallet signs the payment automatically. To give your agent a Coinbase wallet, run `npx @coinbase/payments-mcp` and connect it alongside NanoParse.
 
 ## How payments work under the hood
 
-When an agent without free quota calls `nanoparse_fetch`, the endpoint responds with an **HTTP 402 — Payment Required** carrying x402 payment instructions. The agent's wallet signs a $0.01 USDC (Base) transfer, the facilitator settles it, and the parse proceeds. The hosted endpoint handles the entire challenge → settlement flow — the agent never needs a private key on your machine.
+When an agent without free quota calls `nanoparse_fetch`, the endpoint responds with an **HTTP 402 — Payment Required** carrying x402 payment instructions. The agent's wallet signs a $0.005 USDC (Base) transfer, the facilitator settles it, and the parse proceeds. The hosted endpoint handles the entire challenge → settlement flow — the agent never needs a private key on your machine.
 
 ## Pricing vs Firecrawl
 
 | | NanoParse | Firecrawl Hobby |
 |---|---|---|
-| Billing | **$0.01 per parse, flat** | $16/mo subscription, credits expire monthly |
+| Billing | **$0.005 per parse, flat** | $16/mo subscription, credits expire monthly |
 | 5,000 parses | **$50.00** | $16 base — but ~$145 with JSON/extraction modes (9× credit burn) |
 | Account / API key | **None** | Required |
 | Agent can pay directly (x402) | **Yes** | No |
