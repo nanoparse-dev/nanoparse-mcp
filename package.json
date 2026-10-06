@@ -1,20 +1,7 @@
 {
   "name": "nanoparse-mcp",
-  "version": "1.0.9",
-  "description": "MCP client for NanoParse \u2014 pay-per-parse web content extraction for AI agents",
-  "type": "module",
-  "main": "dist/index.js",
-  "bin": {
-    "nanoparse-mcp": "dist/index.js"
-  },
-  "files": [
-    "dist/"
-  ],
-  "scripts": {
-    "build": "tsc",
-    "postbuild": "node -e \"var f='dist/index.js';var c=require('fs').readFileSync(f,'utf8');require('fs').writeFileSync(f,'#!/usr/bin/env node\\n'+c);require('fs').chmodSync(f,'755')\"",
-    "prepublishOnly": "npm run build"
-  },
+  "version": "2.0.0",
+  "description": "NanoParse MCP — hosted Model Context Protocol server for AI agents. Any URL becomes clean Markdown with attribution signals. $0.005 per page via x402, no account or API key.",
   "keywords": [
     "mcp",
     "model-context-protocol",
@@ -22,23 +9,28 @@
     "web-scraping",
     "markdown",
     "x402",
-    "ai-agent"
+    "ai-agent",
+    "litmus"
   ],
+  "license": "MIT",
+  "homepage": "https://nanoparse.app",
   "repository": {
     "type": "git",
     "url": "https://github.com/nanoparse-dev/nanoparse-mcp"
   },
-  "license": "MIT",
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.0.0",
-    "viem": "^2.55.8"
-  },
-  "devDependencies": {
-    "@types/node": "^22.0.0",
-    "typescript": "^5.5.0"
-  },
-  "homepage": "https://github.com/nanoparse-dev/nanoparse-mcp#readme",
   "bugs": {
     "url": "https://github.com/nanoparse-dev/nanoparse-mcp/issues"
+  },
+  "files": [
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    "examples/"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

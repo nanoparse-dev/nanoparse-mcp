@@ -19,6 +19,19 @@ All notable changes to nanoparse-mcp will be documented in this file.
   conversation, cost comparison vs Firecrawl (verified Aug 2026), new
   `examples/` directory (`example-output.json`, `agent-conversation.md`,
   `costs.md`).
+- Price: $0.01 → **$0.005** per parse (2026-10-06), with the README and
+  examples realigned.
+- `package.json`: **removed `main`, `bin`, `files: ["dist/"]` and the build
+  scripts.** After the client source moved to `archive/v1-local-client/` they
+  pointed at `dist/index.js`, which no longer exists — so `npm run build` failed
+  and a publish would have shipped a package containing only LICENSE, README and
+  package.json. Runtime dependencies (`@modelcontextprotocol/sdk`, `viem`) went
+  with the client.
+
+### Published 2026-10-06
+
+First publish of the 2.0.0 line. Versions ≤ 1.0.9 ship the retired local stdio
+client and are deprecated on the registry.
 
 ## [1.0.9] - 2026-08-23
 
