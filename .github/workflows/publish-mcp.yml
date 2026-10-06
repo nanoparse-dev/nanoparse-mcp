@@ -1,0 +1,46 @@
+name: Publish to MCP Registry
+
+# Publishes the hosted MCP server's metadata (server.json) to the OFFICIAL MCP
+# Registry (registry.modelcontextprotocol.io), so MCP clients and directories can
+# discover https://nanoparse.app/mcp.
+#
+# WHY OIDC: `mcp-publisher login github-oidc` exchanges the run's short-lived
+# OIDC token for a registry token, verified against this repository's owner. No
+# long-lived PAT, no secret to rotate — the same reasoning as publish.yml.
+#
+# NAMESPACE: the server name must be io.github.<owner>/<name>, and the OIDC token
+# proves control of that owner. Our live listing is
+# io.github.nanoparse-dev/nanoparse-mcp (published 2026-08-29). A NEW version is
+# required for every publish; the registry rejects a version it already has.
+#
+# NOTE ON THE TAG PREFIX: `mcp-v*`, deliberately NOT `v*` — `v*` is npm's
+# release trigger in publish.yml, and an npm publish of an already-published
+# version fails. Keeping the triggers apart means one tag, one job.
+on:
+  push:
+    tags: ["mcp-v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write # required: the registry verifies where this run came from
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install mcp-publisher
+        run: |
+          curl -L "https://github.com/modelcontextprotocol/registry/releases/latest/download/mcp-publisher_$(uname -s | tr '[:upper:]' '[:lower:]')_$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/').tar.gz" | tar xz mcp-publisher
+          ./mcp-publisher --help >/dev/null
+
+      - name: Validate server.json
+        run: ./mcp-publisher validate
+
+      - name: Authenticate to the MCP Registry (OIDC)
+        run: ./mcp-publisher login github-oidc
+
+      - name: Publish server metadata
+        run: ./mcp-publisher publish

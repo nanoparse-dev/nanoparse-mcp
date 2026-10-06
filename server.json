@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.nanoparse-dev/nanoparse-mcp",
+  "title": "NanoParse",
+  "description": "Clean Markdown from any URL with Litmus trust signals. $0.005 per page via x402, no account.",
+  "version": "2.0.1",
+  "websiteUrl": "https://nanoparse.app",
+  "repository": {
+    "url": "https://github.com/nanoparse-dev/nanoparse-mcp",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://nanoparse.app/mcp"
+    }
+  ]
+}
