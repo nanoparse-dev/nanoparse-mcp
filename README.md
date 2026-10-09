@@ -3,6 +3,7 @@
 [![npm version](https://img.shields.io/npm/v/nanoparse-mcp)](https://www.npmjs.com/package/nanoparse-mcp)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Website](https://img.shields.io/badge/web-nanoparse.app-22D3EE)](https://nanoparse.app)
+[![MCP Score](https://checkmcp.dev/badge/nanoparse-app.svg?url=https%3A%2F%2Fnanoparse.app%2Fmcp)](https://checkmcp.dev/mcp/nanoparse-app)
 
 **The easiest way for AI agents to read the web.** NanoParse MCP is a hosted Model Context Protocol server at `https://nanoparse.app/mcp` that turns any URL into clean Markdown your agent can actually use — with machine-readable trust signals attached.
 
