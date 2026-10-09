@@ -36,6 +36,13 @@ word of the paper.
       { "value": "2,247", "context": "Thu, 25 Jan 2024 16:34:00 UTC (2,247 KB)" },
       { "value": "2,290", "context": "Sat, 30 Mar 2024 16:36:33 UTC (2,290 KB)" }
     ],
+    "structural_trust_score": {
+      "level": "medium",
+      "trust_factors": [
+        "High-authority source",
+        "No publish date found — verify independently"
+      ]
+    },
     "content_type": "academic_paper",
     "reading_time": { "minutes": 4 },
     "hedge_language": { "density": "low", "markers_found": 0, "per_500_words": 0 },
@@ -47,6 +54,10 @@ word of the paper.
 
 ## How the agent reasons about it
 
+- **Structural trust: medium** — Litmus flags this as high-authority
+  (academic, 0.85) but with no publish date found, so the verdict is "verify
+  independently," not "trust blindly." The agent treats it as a solid source
+  it still needs to date-check.
 - **Authority 0.85, academic** — high-trust source class. Claims from this
   paper can be weighed accordingly. (Litmus scores the *source class*, not
   the truth of the content — the agent still reads and thinks.)

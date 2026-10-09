@@ -8,7 +8,7 @@
 
 No install. No wallet key. No `.env`. Connect once and your agent can read the web.
 
-**Why agents choose NanoParse over Firecrawl or Jina Reader:** no account, no subscription, no API key. Pay $0.005 per parse via x402 when the free tier runs out. Full JavaScript/SPA rendering, native GFM tables, and Litmus trust signals — built for agents, not humans.
+**Why agents choose NanoParse over Firecrawl or Jina Reader:** every page comes back with **Litmus** — 15 machine-readable signals that tell your agent *whether to trust and cite the page* before it reads a word. Pay $0.005 per parse via x402 once the free tier runs out. Full JavaScript/SPA rendering, native GFM tables. No account, no subscription, no API key.
 
 ## Quick start
 
@@ -43,25 +43,30 @@ That's it. Your agent can now fetch pages from inside any MCP-compatible client 
 
 ## Real output
 
-Every parse returns `markdown` + `metadata` + `litmus`. Example — parsing an arXiv paper (`examples/example-output.json`, complete and unmodified):
+Every parse returns `markdown` + `metadata` + `litmus`. Here is the full `litmus` object from a real parse of an arXiv paper (`examples/example-output.json` — markdown truncated there, litmus complete and unmodified):
 
 ```json
 {
   "litmus": {
     "source": { "type": "academic", "authority": 0.85, "rationale": "academic source" },
-    "freshness": { "published": null, "stale_warning": "No publish date found — verify independently" },
+    "freshness": { "published": null, "age": "unknown", "stale_warning": "No publish date found — verify independently", "modified": null, "has_correction": false, "correction_note": null },
     "tldr": "Abstract page for arXiv paper 2401.14295: Demystifying Chains, Trees, and Graphs of Thoughts",
     "key_figures": [ { "value": "2,247", "context": "Thu, 25 Jan 2024 16:34:00 UTC (2,247 KB)" } ],
+    "structural_trust_score": { "level": "medium", "trust_factors": ["High-authority source", "No publish date found — verify independently"] },
+    "hedge_language": { "density": "low", "markers_found": 0, "per_500_words": 0 },
+    "content_density": { "thin_content": false, "substantive_sentence_ratio": 0.76 },
+    "syndication": { "detected": false, "note": null },
+    "paywall": { "detected": false, "note": null },
     "content_type": "academic_paper",
     "reading_time": { "minutes": 4 },
-    "hedge_language": { "density": "low", "markers_found": 0 },
-    "syndication": { "detected": false },
-    "paywall": { "detected": false }
+    "is_archived": { "archive_org": true, "archive_is": false },
+    "outbound_authority": { "score": 0.54, "top_domains": ["ui.adsabs.harvard.edu", "scholar.google.com"] },
+    "boilerplate_ratio": { "ratio": 0.08, "confidence": "high" }
   }
 }
 ```
 
-The agent learns *before reading a word*: this is an academic source (0.85 authority), no publish date was found (verify independently), here's the one-sentence summary, the key numbers, and there's no paywall or syndication flag. See [`examples/agent-conversation.md`](examples/agent-conversation.md) for a full worked round-trip.
+The agent learns *before reading a word*: this is an academic source (0.85 authority), structural trust is **medium** — high authority, but no publish date found, so verify independently. It also gets the one-sentence summary, the key numbers, and confirmation there's no paywall or syndication flag. See [`examples/agent-conversation.md`](examples/agent-conversation.md) for a full worked round-trip.
 
 ## Payments
 
@@ -79,7 +84,7 @@ When an agent without free quota calls `nanoparse_fetch`, the endpoint responds 
 | | NanoParse | Firecrawl Hobby |
 |---|---|---|
 | Billing | **$0.005 per parse, flat** | $16/mo subscription, credits expire monthly |
-| 5,000 parses | **$50.00** | $16 base — but ~$145 with JSON/extraction modes (9× credit burn) |
+| 5,000 parses | **$25.00** | $16 base — but ~$145 with JSON/extraction modes (9× credit burn) |
 | Account / API key | **None** | Required |
 | Agent can pay directly (x402) | **Yes** | No |
 

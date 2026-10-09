@@ -1,6 +1,6 @@
 # Cost comparison: NanoParse vs Firecrawl
 
-Pricing verified 2026-08-28. NanoParse: **$0.01 per parse, flat** — no
+Pricing verified 2026-08-28 (Firecrawl); NanoParse updated to the current flat rate. NanoParse: **$0.005 per parse, flat** — no
 subscription, no account, no API key. Litmus signals, full JS/SPA rendering,
 and GFM tables are included in every parse — there are no feature
 multipliers.
@@ -19,11 +19,11 @@ Two things the base rate hides:
 
 1. **Credits do not roll over.** A Hobby subscription is $16 every month —
    use 1,000 of 5,000 credits and you still paid $16. NanoParse bills only
-   what you use: $10 for exactly 1,000 parses.
+   what you use: $5 for exactly 1,000 parses.
 2. **Feature multipliers.** JSON extraction and enhanced mode each add
    credits per page (up to 9 credits/page combined). At Hobby that makes a
-   fully-featured parse ~$0.029/page — ~3× NanoParse's flat rate. Litmus,
-   structured output, and rendering are included in NanoParse's $0.01 with
+   fully-featured parse ~$0.029/page — ~6× NanoParse's flat rate. Litmus,
+   structured output, and rendering are included in NanoParse's $0.005 with
    no multiplier.
 
 ## What a month of 5,000 parses costs
@@ -31,9 +31,9 @@ Two things the base rate hides:
 | | NanoParse | Firecrawl Hobby |
 |---|---|---|
 | Subscription | None — pay per parse | $16/mo, billed every month |
-| 5,000 plain scrapes | **$50.00** | $16 (base rate) |
-| 5,000 with extraction/features | **$50.00** | ~$145 (9× credit burn) |
-| Use only 1,000 of your quota | **$10.00** | $16 (credits expire) |
+| 5,000 plain scrapes | **$25.00** | $16 (base rate) |
+| 5,000 with extraction/features | **$25.00** | ~$145 (9× credit burn) |
+| Use only 1,000 of your quota | **$5.00** | $16 (credits expire) |
 | Account / API key needed | No | Yes |
 | Agent can pay directly (x402) | Yes | No |
 
