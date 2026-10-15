@@ -1,0 +1,24 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "nanoparse",
+  "version": "1.0.0",
+  "description": "Read any live web page as clean Markdown with Litmus trust signals (source authority, freshness, structural trust). $0.005 per parse via x402, USDC on Base; 10 free parses/month with a signed wallet. No account or API key.",
+  "author": {
+    "name": "NanoParse",
+    "url": "https://nanoparse.app"
+  },
+  "homepage": "https://nanoparse.app",
+  "repository": "https://github.com/nanoparse-dev/nanoparse-mcp",
+  "license": "MIT",
+  "keywords": [
+    "markdown",
+    "web-scraping",
+    "web-to-markdown",
+    "extraction",
+    "litmus",
+    "trust-signals",
+    "x402",
+    "mcp",
+    "agents"
+  ]
+}
