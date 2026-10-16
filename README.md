@@ -119,5 +119,7 @@ is the current, supported integration.
 - Quick start & integration: [nanoparse.app/quickstart](https://nanoparse.app/quickstart)
 - Compare & pricing: [nanoparse.app/compare](https://nanoparse.app/compare)
 - API + MCP endpoint: [nanoparse.app](https://nanoparse.app)
+- Security policy: [SECURITY.md](SECURITY.md) — report a vulnerability to hello@nanoparse.app
+  (also published at `https://nanoparse.app/.well-known/security.txt`)
 
 MIT licensed.
