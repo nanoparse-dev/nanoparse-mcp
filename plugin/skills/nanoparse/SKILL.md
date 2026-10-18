@@ -6,7 +6,7 @@ description: Read any live web page as clean Markdown plus Litmus source-intelli
 # NanoParse — URL to agent-ready Markdown
 
 NanoParse turns one URL into the page's main content as clean Markdown (GFM tables
-preserved) plus **Litmus**: 15 machine-readable trust signals (freshness, source
+preserved) plus **Litmus**: 20 machine-readable trust signals (freshness, source
 authority, structural trust, key figures, syndication, paywall detection).
 
 Connect once to the `nanoparse` MCP server and you get two tools.

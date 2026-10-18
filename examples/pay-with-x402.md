@@ -4,13 +4,14 @@ NanoParse answers an unauthenticated call with **HTTP 402** and machine-readable
 terms — the price, the token, the chain, the recipient, and what a valid signature
 must look like. No account, no API key, no card, no subscription.
 
-- **First 10 parses per network (subnet): free**, lifetime.
+- **10 free parses per month with a signed wallet**, or 3 anonymous free tries per
+  network.
 - **After that: $0.005 USDC on Base per parse**, flat.
 - Settlement runs **after** a page is read. A page that cannot be read — bot wall,
   consent wall, paywall, JS shell with no text — is reported with a named reason
   and **never charged**.
 
-Every parse returns clean Markdown plus **Litmus** — 15 machine-readable signals
+Every parse returns clean Markdown plus **Litmus** — 20 machine-readable signals
 (source authority, freshness, structural trust, content density, syndication,
 paywall state) in the same response, not as a second billed call.
 
@@ -65,7 +66,7 @@ the wallet is the caller's.
 // read-page.mjs — read one page, paying $0.005 in USDC on Base only if asked.
 // Usage:  npm i viem && WALLET_KEY=0x... node read-page.mjs https://example.com
 //
-// 1. Try the free tier (10 parses per network, lifetime): a plain POST.
+// 1. Try the free tier (10/month with a signed wallet, or 3 anonymous tries): a plain POST.
 // 2. A 402 is the quote, not an error. Read the terms out of it.
 // 3. Sign an EIP-3009 permit over those terms (gas is the facilitator's).
 // 4. Retry with the signed envelope; poll /status (free) until the page lands.

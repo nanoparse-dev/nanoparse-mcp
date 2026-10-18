@@ -11,7 +11,7 @@
 
 No install. No wallet key. No `.env`. Connect once and your agent can read the web.
 
-**Why agents choose NanoParse over Firecrawl or Jina Reader:** every page comes back with **Litmus** — 15 machine-readable signals that tell your agent *whether to trust and cite the page* before it reads a word. Pay $0.005 per parse via x402 once the free tier runs out. Full JavaScript/SPA rendering, native GFM tables. No account, no subscription, no API key.
+**Why agents choose NanoParse over Firecrawl or Jina Reader:** every page comes back with **Litmus** — 20 machine-readable signals that tell your agent *whether to trust and cite the page* before it reads a word. Pay $0.005 per parse via x402 once the free tier runs out. Full JavaScript/SPA rendering, native GFM tables. No account, no subscription, no API key.
 
 ## Quick start
 
@@ -73,7 +73,7 @@ The agent learns *before reading a word*: this is an academic source (0.85 autho
 
 ## Payments
 
-- **First 10 parses per network (subnet) are free** — lifetime, shared across your whole network. No account, no API key, no human required.
+- **10 free parses per month with a signed wallet** (sign the claim message — no payment), or 3 anonymous free tries per network. No account, no API key, no human required.
 - **After that: $0.005 per parse** (flat, no subscriptions) via **x402** — an open micropayment protocol. Your agent's wallet signs the payment automatically. To give your agent a Coinbase wallet, run `npx @coinbase/payments-mcp` and connect it alongside NanoParse.
 
 Copy-paste recipe for both paths — the wallet-MCP one with no code, and a ~40-line REST client — including the exact `402 → sign → retry` loop and the error codes worth branching on: [`examples/pay-with-x402.md`](examples/pay-with-x402.md).
