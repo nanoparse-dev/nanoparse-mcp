@@ -21,6 +21,7 @@ Add this to your MCP client config:
 {
   "mcpServers": {
     "nanoparse": {
+      "type": "http",
       "url": "https://nanoparse.app/mcp"
     }
   }
