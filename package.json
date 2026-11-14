@@ -1,7 +1,7 @@
 {
   "name": "nanoparse-mcp",
-  "version": "2.0.0",
-  "description": "NanoParse MCP — hosted Model Context Protocol server for AI agents. Any URL becomes clean Markdown with attribution signals. $0.005 per page via x402, no account or API key.",
+  "version": "2.0.1",
+  "description": "NanoParse MCP \u2014 hosted Model Context Protocol server for AI agents. Any URL becomes clean Markdown with attribution signals. $0.002 per page via x402, no account or API key.",
   "keywords": [
     "mcp",
     "model-context-protocol",

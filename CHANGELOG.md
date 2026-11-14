@@ -1,3 +1,8 @@
+## 2.0.1 — 2026-11-14
+
+- Price: $0.005 → **$0.002** per parse. Copy only: the hosted endpoint takes the
+  amount from the live 402 challenge, so no client change is needed.
+
 # Changelog
 
 All notable changes to nanoparse-mcp will be documented in this file.

@@ -1,6 +1,6 @@
 ---
 name: nanoparse
-description: Read any live web page as clean Markdown plus Litmus source-intelligence signals (source authority, freshness, structural trust, syndication, paywall) through the NanoParse MCP server. Use when an agent needs the content of a URL that is noisy, JavaScript-rendered, or behind a bot wall, or needs to judge whether a source is worth citing. Use the nanoparse_fetch and nanoparse_status tools. Covers the $0.005-per-parse x402 payment model, the free tier, the one-URL-per-call looping pattern, and what is never charged. Do not use for raw HTML, screenshots, or PDFs, and never to bypass a paywall — paywalled and login-walled pages are refused, not bypassed.
+description: Read any live web page as clean Markdown plus Litmus source-intelligence signals (source authority, freshness, structural trust, syndication, paywall) through the NanoParse MCP server. Use when an agent needs the content of a URL that is noisy, JavaScript-rendered, or behind a bot wall, or needs to judge whether a source is worth citing. Use the nanoparse_fetch and nanoparse_status tools. Covers the $0.002-per-parse x402 payment model, the free tier, the one-URL-per-call looping pattern, and what is never charged. Do not use for raw HTML, screenshots, or PDFs, and never to bypass a paywall — paywalled and login-walled pages are refused, not bypassed.
 ---
 
 # NanoParse — URL to agent-ready Markdown
@@ -25,7 +25,7 @@ Connect once to the `nanoparse` MCP server and you get two tools.
 - **Free tier:** 10 free parses per month with a signed wallet (pass `wallet_address`
   + `wallet_signature` — an EIP-191 personal_sign over the claim message), or 3
   anonymous free tries per network. No account, no API key, no signup.
-- **Paid:** after the free tier, each parse costs **$0.005 USDC on Base**, settled
+- **Paid:** after the free tier, each parse costs **$0.002 USDC on Base**, settled
   via **x402**. When the free tier is exhausted the tool returns a `payment_required`
   error carrying `payment_terms` — sign them and retry, passing the signed terms as
   `payment_signature` (or as a `Payment-Signature` header if your client supports

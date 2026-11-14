@@ -1,6 +1,6 @@
 # Cost comparison: NanoParse vs Firecrawl
 
-Pricing verified 2026-08-28 (Firecrawl); NanoParse updated to the current flat rate. NanoParse: **$0.005 per parse, flat** — no
+Pricing verified 2026-08-28 (Firecrawl); NanoParse updated to the current flat rate. NanoParse: **$0.002 per parse, flat** — no
 subscription, no account, no API key. Litmus signals, full JS/SPA rendering,
 and GFM tables are included in every parse — there are no feature
 multipliers.
@@ -23,7 +23,7 @@ Two things the base rate hides:
 2. **Feature multipliers.** JSON extraction and enhanced mode each add
    credits per page (up to 9 credits/page combined). At Hobby that makes a
    fully-featured parse ~$0.029/page — ~6× NanoParse's flat rate. Litmus,
-   structured output, and rendering are included in NanoParse's $0.005 with
+   structured output, and rendering are included in NanoParse's $0.002 with
    no multiplier.
 
 ## What a month of 5,000 parses costs

@@ -11,7 +11,7 @@
 
 No install. No wallet key. No `.env`. Connect once and your agent can read the web.
 
-**Why agents choose NanoParse over Firecrawl or Jina Reader:** every page comes back with **Litmus** — 20 machine-readable signals that tell your agent *whether to trust and cite the page* before it reads a word. Pay $0.005 per parse via x402 once the free tier runs out. Full JavaScript/SPA rendering, native GFM tables. No account, no subscription, no API key.
+**Why agents choose NanoParse over Firecrawl or Jina Reader:** every page comes back with **Litmus** — 20 machine-readable signals that tell your agent *whether to trust and cite the page* before it reads a word. Pay $0.002 per parse via x402 once the free tier runs out. Full JavaScript/SPA rendering, native GFM tables. No account, no subscription, no API key.
 
 ## Quick start
 
@@ -75,19 +75,19 @@ The agent learns *before reading a word*: this is an academic source (0.85 autho
 ## Payments
 
 - **10 free parses per month with a signed wallet** (sign the claim message — no payment), or 3 anonymous free tries per network. No account, no API key, no human required.
-- **After that: $0.005 per parse** (flat, no subscriptions) via **x402** — an open micropayment protocol. Your agent's wallet signs the payment automatically. To give your agent a Coinbase wallet, run `npx @coinbase/payments-mcp` and connect it alongside NanoParse.
+- **After that: $0.002 per parse** (flat, no subscriptions) via **x402** — an open micropayment protocol. Your agent's wallet signs the payment automatically. To give your agent a Coinbase wallet, run `npx @coinbase/payments-mcp` and connect it alongside NanoParse.
 
 Copy-paste recipe for both paths — the wallet-MCP one with no code, and a ~40-line REST client — including the exact `402 → sign → retry` loop and the error codes worth branching on: [`examples/pay-with-x402.md`](examples/pay-with-x402.md).
 
 ## How payments work under the hood
 
-When an agent without free quota calls `nanoparse_fetch`, the endpoint responds with an **HTTP 402 — Payment Required** carrying x402 payment instructions. The agent's wallet signs a $0.005 USDC (Base) transfer, the facilitator settles it, and the parse proceeds. The hosted endpoint handles the entire challenge → settlement flow — the agent never needs a private key on your machine.
+When an agent without free quota calls `nanoparse_fetch`, the endpoint responds with an **HTTP 402 — Payment Required** carrying x402 payment instructions. The agent's wallet signs a $0.002 USDC (Base) transfer, the facilitator settles it, and the parse proceeds. The hosted endpoint handles the entire challenge → settlement flow — the agent never needs a private key on your machine.
 
 ## Pricing vs Firecrawl
 
 | | NanoParse | Firecrawl Hobby |
 |---|---|---|
-| Billing | **$0.005 per parse, flat** | $16/mo subscription, credits expire monthly |
+| Billing | **$0.002 per parse, flat** | $16/mo subscription, credits expire monthly |
 | 5,000 parses | **$25.00** | $16 base — but ~$145 with JSON/extraction modes (9× credit burn) |
 | Account / API key | **None** | Required |
 | Agent can pay directly (x402) | **Yes** | No |

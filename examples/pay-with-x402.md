@@ -6,7 +6,7 @@ must look like. No account, no API key, no card, no subscription.
 
 - **10 free parses per month with a signed wallet**, or 3 anonymous free tries per
   network.
-- **After that: $0.005 USDC on Base per parse**, flat.
+- **After that: $0.002 USDC on Base per parse**, flat.
 - Settlement runs **after** a page is read. A page that cannot be read — bot wall,
   consent wall, paywall, JS shell with no text — is reported with a named reason
   and **never charged**.
@@ -63,7 +63,7 @@ call will go through without payment.
 the wallet is the caller's.
 
 ```js
-// read-page.mjs — read one page, paying $0.005 in USDC on Base only if asked.
+// read-page.mjs — read one page, paying $0.002 in USDC on Base only if asked.
 // Usage:  npm i viem && WALLET_KEY=0x... node read-page.mjs https://example.com
 //
 // 1. Try the free tier (10/month with a signed wallet, or 3 anonymous tries): a plain POST.
@@ -91,7 +91,7 @@ async function readPage(url) {
     return poll(await res.json());
   }
 
-  // 2. The terms. `amount` is micro-USDC ("5000" = $0.005) and `payTo` is the
+  // 2. The terms. `amount` is micro-USDC ("2000" = $0.002) and `payTo` is the
   //    only address a permit should ever be signed for.
   const terms = (await res.json()).payment_required.accepts[0];
   const now = Math.floor(Date.now() / 1000);
@@ -175,7 +175,7 @@ Captured live, free tier exhausted, no payment attached:
         "scheme": "exact",
         "network": "eip155:8453",
         "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-        "amount": "5000",
+        "amount": "2000",
         "payTo": "0x57a1d06873db575baeae1f6af30862a75c7bd570",
         "maxTimeoutSeconds": 60,
         "extra": { "assetTransferMethod": "eip3009", "name": "USD Coin", "version": "2" }
@@ -193,7 +193,7 @@ can send a signed payment too.
 
 Four fields carry the weight:
 
-- **`amount`** is micro-USDC — `"5000"` is $0.005 at six decimals. There is no
+- **`amount`** is micro-USDC — `"2000"` is $0.002 at six decimals. There is no
   currency string to parse.
 - **`network`** is a CAIP-2 chain id (`eip155:8453` is Base) and **`asset`** is the
   USDC contract on it, so the client never guesses which USDC.
@@ -253,7 +253,7 @@ but it is one GET and it catches a swapped recipient.
 - The client under **Option B** was run verbatim against the live endpoint on
   2026-10-06 with a fresh, unfunded throwaway wallet: free tier exhausted → `402`
   → signed envelope → retry → `insufficient_usdc: Payer's USDC balance is too low
-  for this call (needs 5000 micro-USDC on Base)`. The shape and signature were
+  for this call (needs 2000 micro-USDC on Base)`. The shape and signature were
   accepted; nothing was charged.
 - The **Option A** MCP loop was verified the same way: `tools/call` returned
   `isError: true` with `structuredContent` = the PaymentRequired object, and the

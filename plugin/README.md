@@ -38,7 +38,7 @@ No install, no `.env`, no API key. Connect once and the agent can read the web.
 
 - **Free:** 10 free parses per month with a signed wallet, or 3 anonymous free tries
   per network (subnet).
-- **Paid:** **$0.005 per parse**, flat, via **x402** (USDC on Base). No account, no
+- **Paid:** **$0.002 per parse**, flat, via **x402** (USDC on Base). No account, no
   subscription, no API key — payment *is* the only authentication.
 - A page NanoParse cannot read (bot wall, consent wall, paywall, PDF) is **never charged** —
   settlement happens only after a successful render.
